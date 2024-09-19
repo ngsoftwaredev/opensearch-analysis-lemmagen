@@ -1,30 +1,30 @@
 // TODO: Bring back tests for keyword_repeat and keyword_marker after
 // https://github.com/elastic/elasticsearch/issues/27527 is resolved
 //
-package org.elasticsearch.index.analysis;
+package org.opensearch.index.analysis;
 
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.email.UAX29URLEmailTokenizer;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.plugin.analysis.lemmagen.AnalysisLemmagenPlugin;
-import org.elasticsearch.test.ESTestCase;
-import org.elasticsearch.test.ESTokenStreamTestCase;
-import org.elasticsearch.cluster.metadata.IndexMetadata;
-import org.elasticsearch.Version;
-import org.elasticsearch.env.Environment;
+import org.opensearch.Version;
+import org.opensearch.cluster.metadata.IndexMetadata;
+import org.opensearch.common.settings.Settings;
+import org.opensearch.env.Environment;
+import org.opensearch.plugin.analysis.lemmagen.AnalysisLemmagenPlugin;
+import org.opensearch.test.OpenSearchTestCase;
+import org.opensearch.test.OpenSearchTokenStreamTestCase;
 
-import java.io.IOException;
-import java.io.StringReader;
+import java.io.IOException;             
 import java.io.InputStream;
+import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static org.hamcrest.Matchers.instanceOf;
 
-public class LemmagenAnalysisTest extends ESTokenStreamTestCase {
+public class LemmagenAnalysisTest extends OpenSearchTokenStreamTestCase {
 
   public void testLemmagenTokenFilter() throws IOException {
-    ESTestCase.TestAnalysis analysis = createAnalysis();
+    OpenSearchTestCase.TestAnalysis analysis = createAnalysis();
 
     String source = "Děkuji, že jsi přišel.";
     String[] expected = { "Děkovat", "že", "být", "přijít" };
@@ -41,15 +41,15 @@ public class LemmagenAnalysisTest extends ESTokenStreamTestCase {
     }
   }
 
-  public ESTestCase.TestAnalysis createAnalysis() throws IOException {
-    InputStream lexicon = LemmagenAnalysisTest.class.getResourceAsStream("/org/elasticsearch/index/analysis/cs.lem");
+  public OpenSearchTestCase.TestAnalysis createAnalysis() throws IOException {
+    InputStream lexicon = LemmagenAnalysisTest.class.getResourceAsStream("/org/opensearch/index/analysis/cs.lem");
 
     Path home = createTempDir();
     Path config = home.resolve("config" + "/" + LemmagenFilterFactory.DEFAULT_DIRECTORY);
     Files.createDirectories(config);
     Files.copy(lexicon, config.resolve("cs.lem"));
 
-    String path = "/org/elasticsearch/index/analysis/lemmagen.json";
+    String path = "/org/opensearch/index/analysis/lemmagen.json";
 
     Settings settings = Settings.builder().loadFromStream(path, getClass().getResourceAsStream(path), false)
         .put(IndexMetadata.SETTING_VERSION_CREATED, Version.CURRENT).put(Environment.PATH_HOME_SETTING.getKey(), home)

@@ -3,24 +3,23 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <name>elasticsearch-analysis-lemmagen</name>
+  <name>opensearch-analysis-lemmagen</name>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.elasticsearch</groupId>
-  <artifactId>elasticsearch-analysis-lemmagen</artifactId>
-  <version>8.6.1</version>
+  <artifactId>opensearch-analysis-lemmagen</artifactId>
+  <version>2.14.0</version>
   <packaging>jar</packaging>
   <properties>
-    <plugin.version>8.6.1</plugin.version>
+    <plugin.version>2.14.0</plugin.version>
     <lucene.version>9.4.2</lucene.version>
-    <elasticsearch.version>8.6.1</elasticsearch.version>
+    <opensearch.version>2.14.0</opensearch.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.elasticsearch</groupId>
-      <artifactId>elasticsearch</artifactId>
-      <version>${elasticsearch.version}</version>
-      <scope>compile</scope>
+      <groupId>org.opensearch</groupId>
+      <artifactId>opensearch</artifactId>
+      <version>${opensearch.version}</version>
     </dependency>
     <dependency>
       <groupId>eu.hlavki.text</groupId>
@@ -56,9 +55,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.elasticsearch.test</groupId>
+      <groupId>org.opensearch.test</groupId>
       <artifactId>framework</artifactId>
-      <version>${elasticsearch.version}</version>
+      <version>${opensearch.version}</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>

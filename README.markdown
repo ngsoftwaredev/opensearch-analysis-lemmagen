@@ -14,10 +14,10 @@ Beginning with elasticsearch 5 installation is following:
 # specify elasticsearch version
 #
 export VERSION=6.0.0
-./bin/elasticsearch-plugin install https://github.com/vhyza/elasticsearch-analysis-lemmagen/releases/download/v$VERSION/elasticsearch-analysis-lemmagen-$VERSION-plugin.zip
+./bin/elasticsearch-plugin install https://github.com/vhyza/opensearch-analysis-lemmagen/releases/download/v$VERSION/opensearch-analysis-lemmagen-$VERSION-plugin.zip
 ```
 
-For older elasticsearch version see installation instructions in [**releases section**](https://github.com/vhyza/elasticsearch-analysis-lemmagen/releases).
+For older elasticsearch version see installation instructions in [**releases section**](https://github.com/vhyza/opensearch-analysis-lemmagen/releases).
 
 ### Lexicon
 
@@ -37,7 +37,7 @@ wget https://github.com/vhyza/lemmagen-lexicons/raw/master/free/lexicons/cs.lem
 After plugin installation and **elasticsearch restart** you should see in logs something like:
 
 ```bash
-[2018-02-20T17:46:09,038][INFO ][o.e.p.PluginsService] [1rZCAqs] loaded plugin [elasticsearch-analysis-lemmagen]
+[2018-02-20T17:46:09,038][INFO ][o.e.p.PluginsService] [1rZCAqs] loaded plugin [opensearch-analysis-lemmagen]
 ```
 
 ## Usage
