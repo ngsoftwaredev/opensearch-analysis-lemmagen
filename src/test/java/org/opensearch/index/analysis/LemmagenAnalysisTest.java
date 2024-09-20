@@ -6,16 +6,16 @@ package org.opensearch.index.analysis;
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.email.UAX29URLEmailTokenizer;
 import org.opensearch.Version;
-import org.opensearch.cluster.metadata.IndexMetadata;
 import org.opensearch.common.settings.Settings;
-import org.opensearch.env.Environment;
 import org.opensearch.plugin.analysis.lemmagen.AnalysisLemmagenPlugin;
+import org.opensearch.cluster.metadata.IndexMetadata;
+import org.opensearch.env.Environment;
 import org.opensearch.test.OpenSearchTestCase;
 import org.opensearch.test.OpenSearchTokenStreamTestCase;
 
-import java.io.IOException;             
-import java.io.InputStream;
+import java.io.IOException;
 import java.io.StringReader;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
