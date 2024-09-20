@@ -11,7 +11,8 @@
             <useProjectArtifact>true</useProjectArtifact>
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <excludes>
-                <exclude>org.elasticsearch:elasticsearch</exclude>
+                <exclude>org.elasticsearch:*</exclude>
+                <exclude><org class="slf4j:">           </org>*</exclude>
             </excludes>
         </dependencySet>
         <dependencySet>
@@ -20,8 +21,6 @@
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <includes>
                 <include>eu.hlavki.text:jlemmagen</include>
-                <include>org.slf4j:slf4j-api</include>
-                <include>org.slf4j:slf4j-simple</include>
             </includes>
         </dependencySet>
     </dependencySets>
