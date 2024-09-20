@@ -12,7 +12,7 @@
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <excludes>
                 <exclude>org.elasticsearch:*</exclude>
-                <exclude><org class="slf4j:">           </org>*</exclude>
+                <exclude>org.slf4j:*</exclude>
             </excludes>
         </dependencySet>
         <dependencySet>
