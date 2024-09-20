@@ -1,23 +1,21 @@
-# LemmaGen Analysis for ElasticSearch
+# LemmaGen Analysis for OpenSearch
 
-The LemmaGen Analysis plugin provides [jLemmaGen lemmatizer](https://github.com/hlavki/jlemmagen) as Elasticsearch [token filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/analysis-tokenfilters.html).
+This project is forked from https://github.com/vhyza/elasticsearch-analysis-lemmagen. 
+
+The LemmaGen Analysis plugin provides [jLemmaGen lemmatizer](https://github.com/hlavki/jlemmagen) as OpenSearch [token filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/analysis-tokenfilters.html).
 
 [jLemmaGen](https://github.com/hlavki/jlemmagen) is Java implementation of [LemmaGen](http://lemmatise.ijs.si/) project (originally written in C++ and C#).
 
-## Instalation
+## Installation
 
 ### Plugin
 
-Beginning with elasticsearch 5 installation is following:
+Beginning with OpenSearch 2, installation is as follows:
 
 ```bash
-# specify elasticsearch version
-#
-export VERSION=6.0.0
-./bin/elasticsearch-plugin install https://github.com/vhyza/opensearch-analysis-lemmagen/releases/download/v$VERSION/opensearch-analysis-lemmagen-$VERSION-plugin.zip
+export VERSION=2.14.0
+./bin/opensearch-plugin install https://github.com/ngsoftwaredev/opensearch-analysis-lemmagen/releases/download/$VERSION/opensearch-analysis-lemmagen-$VERSION-plugin.zip
 ```
-
-For older elasticsearch version see installation instructions in [**releases section**](https://github.com/vhyza/opensearch-analysis-lemmagen/releases).
 
 ### Lexicon
 

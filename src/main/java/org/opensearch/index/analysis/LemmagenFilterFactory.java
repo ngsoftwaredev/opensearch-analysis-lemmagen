@@ -10,8 +10,8 @@ import eu.hlavki.text.lemmagen.LemmatizerFactory;
 
 import org.apache.lucene.analysis.TokenStream;
 
-import org.opensearch.common.settings.Settings;
 import org.opensearch.env.Environment;
+import org.opensearch.common.settings.Settings;
 import org.opensearch.index.IndexSettings;
 
 public class LemmagenFilterFactory extends AbstractTokenFilterFactory {
@@ -19,7 +19,7 @@ public class LemmagenFilterFactory extends AbstractTokenFilterFactory {
   private Lemmatizer lemmatizer;
   static final String DEFAULT_DIRECTORY = "lemmagen";
 
-  public LemmagenFilterFactory(Environment env, String name, IndexSettings indexSettings, Settings settings) {
+  public LemmagenFilterFactory(IndexSettings indexSettings, Environment env, String name, Settings settings) {
 
     super(indexSettings, name, settings);
 
